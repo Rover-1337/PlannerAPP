@@ -1,0 +1,2171 @@
+<MenuScreen>:
+    StackLayout:
+        Button:
+            text: 'Woordjes Leren'
+            size_hint: (.2, .1)
+            on_press: root.manager.current = 'settings'
+
+        Button:
+            text: 'Agenda'
+            size_hint: (.2, .1)
+            on_press: root.manager.current = 'agenda'
+
+        Button:
+            text: 'Cijfers Berekenen'
+            size_hint: (.2, .1)
+            on_press: root.manager.current = 'calculator'
+
+        Button:
+            text: "play Learn Sound"
+            size_hint: (.2, .1)
+            on_release: root.play_sound()
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        Label:
+            id: name_pieces
+            text: "Your Current Tasks: "
+            font_size: 20
+
+        GridLayout:
+            cols:3
+
+            CheckBox:
+                on_active: root.checked(self, self.active)
+
+            Label:
+                id: list_label
+                color: 1,1,0,1
+                text: " "
+                font_size: 15
+
+
+        Label:
+            id: name_label
+            color: 0,1,1,1
+            text: " "
+            font_size: 15
+
+        Button:
+            id: name_label
+            size_hint: .2, .5
+            text: "Done"
+            font_size: 15
+            on_press: root.deletetodo()
+
+        TextInput:
+            id: name_input
+            multiline: False
+            size_hint: (1, .5)
+
+        Button:
+            size_hint: (1, .5)
+            font_size: 32
+            text: "Submit"
+            on_press: root.main()
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Button:
+            id: goback
+            size_hint: (.15, .5)
+            text: "Ga terug"
+            on_press: root.manager.current = 'menu'
+
+
+        Label:
+            id: words
+            color: 0,1,1,1
+            text: "Typ je woordjes in de lijst met een '=' tussen de verschillende woordjes, en gebruik een Enter voor elke rij"
+            font_size: 16
+
+        TextInput:
+            id: user_input
+            multiline: True
+
+        Button:
+            text: 'Woordjes Opslaan'
+            on_press: root.register()
+        Button:
+            text: 'Woordjes Overhoren'
+            on_press: root.manager.current = 'overhoren'
+        Button:
+            text: 'Leer Woorjdes Die verkeerd gingen'
+            on_press: root.manager.current = 'overhoren1'
+
+<AgendaScreen>:
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "Augustus"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'juli'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'september'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<september>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "September"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'agenda'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            on_press: root.manager.current = 'oktober'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+            on_press: app.addjobsep(self)
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<juli>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "Juli"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'juni'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'agenda'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<Overhoren>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Button:
+            size: 75, 50
+            size_hint: None, None
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+
+        Button:
+            text: "Volgende Woordje"
+            on_press: root.overhoren()
+
+        Label:
+            text: "Woordje: "
+
+
+        Label:
+            id: list_vraag
+            text: " "
+
+        TextInput:
+            id: antwoordinput
+            multiline: True
+
+        Button:
+            id: antwoord
+            text: "Check Het antwoord"
+            on_press: root.antwoord()
+
+<Overhoren1>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Button:
+            size: 75, 50
+            size_hint: None, None
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+
+        Button:
+            text: "Volgende Woordje"
+            on_press: root.overhoren1()
+
+        Label:
+            text: "Woordje: "
+
+
+        Label:
+            id: list_vraag
+            text: " "
+
+        TextInput:
+            id: antwoordinput
+            multiline: True
+
+        Button:
+            id: antwoord
+            text: "Check Het antwoord"
+            on_press: root.antwoord1()
+
+<calculator>:
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+
+        Button:
+            size: 75, 50
+            size_hint: None, None
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+
+        Label:
+            text: "Cijfer [Hoevaak ie meetelt] bijv: 6.8 2"
+
+        Label:
+            id: gemmidelde
+            text: " "
+
+        TextInput:
+            id: antwoordinput1
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput2
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput3
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput4
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput5
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput6
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput7
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput8
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput9
+            multiline: False
+            size_hint: .3, .5
+        TextInput:
+            id: antwoordinput10
+            multiline: False
+            size_hint: .3, .5
+
+        Button:
+            text: "Bereken"
+            on_press: root.calculator()
+
+<oktober>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "oktober"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'september'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'november'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<november>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "november"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'oktober'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'december'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<december>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "december"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'november'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'januari'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<januari>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "januari"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'december'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'februari'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<februari>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "februari"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'januari'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'maart'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<maart>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "maart"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'februari'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'april'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<april>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "april"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'maart'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'mei'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<mei>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "mei"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'april'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'juni'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+            on_press: app.addjobmei(self)
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<juni>
+    FloatLayout:
+        size: root.width, root.height
+
+        Label:
+            text: "juni"
+            pos_hint: {"x":0.0, "y":0.45}
+
+        Button:
+            text: '<-'
+            on_press: root.manager.current = 'mei'
+            size_hint: .3, .1
+            pos_hint: {"x":0}
+
+        Button:
+            text: 'Go Back'
+            on_press: root.manager.current = 'menu'
+            size_hint: .3, .1
+            pos_hint: {"x":.35, "bottom":1}
+
+        Button:
+            text: '->'
+            size_hint: .3, .1
+            pos_hint: {"x":.7, "bottom":1}
+            on_press: root.manager.current = 'juli'
+
+    GridLayout:
+        orientation: "lr-tb"
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .75, .75
+        rows:5
+
+        Button:
+            text: "1"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "2"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "3"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "4"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "5"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "6"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "7"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "8"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "9"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "10"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "11"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "12"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "13"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "14"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "15"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "16"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "17"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "18"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "19"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "20"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "21"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "22"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "23"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "24"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "25"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "26"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "27"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "28"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "29"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "30"
+            on_press: root.manager.current = "askjob"
+
+        Button:
+            text: "31"
+            on_press: root.manager.current = "askjob"
+
+
+<askjob>
+    BoxLayout:
+        Button
+            text: "Add Job"
+            on_release: root.manager.current = 'addjob'
+        Button
+            text: "Check Your Jobs For today"
+            on_release: root.manager.current = 'checkjob'
+
+
+<addjob>
+    FloatLayout:
+        Button:
+            id: goback
+            size_hint: (.15, .14)
+            pos_hint: {"x":0, "top":1}
+            text: "Ga terug"
+            on_press: root.manager.current = 'menu'
+
+        Label:
+            pos_hint: {'center_x': .5, 'center_y': .7}
+            size_hint: .75, .75
+            text: "Job List For Today"
+
+
+        TextInput:
+            id: input
+            font_size: 15
+            multiline: True
+            size_hint: .5, .25
+            pos_hint: {"x":0.25, "top":0.66}
+
+        Button:
+            id: test
+            pos_hint: {"x":.35, "bottom":1}
+            size_hint: .3, .1
+            font_size: 32
+            text: "Submit"
+            on_press: root.addnewjob()
+
+<checkjob>
+    FloatLayout:
+        Label:
+            id: list_label
+            pos_hint: {"x":0.0, "top":1}
+            text: ''
+
+        Button:
+            text: 'Get Jobs todo'
+			pos_hint: {"x":0, "y":0.66}
+            size_hint: (.15, .14)
+            on_release: root.checkcurrentjobs()
+
+        Button:
+            id: goback
+            size_hint: (.15, .14)
+            pos_hint: {"x":0, "top":1}
+            text: "Ga terug"
+            on_press: root.manager.current = 'menu'
